@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nessus
+  labels:
+    app: nessus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nessus
+  template:
+    metadata:
+      labels:
+        app: nessus
+    spec:
+      initContainers:
+      - name: prepare-nfs
+        image: busybox
+        command:
+          - sh
+          - -c
+          - |
+            mkdir -p /opt/nessus/var/nessus/CA
+            chown -R 1000:1000 /opt/nessus/var
+            chmod -R 750 /opt/nessus/var
+        volumeMounts:
+        - name: nessus-data-volume
+          mountPath: /opt/nessus/var
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: nessus
+                    operator: In
+                    values:
+                      - "true"
+      tolerations:
+        - key: "nessus"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+      securityContext:
+        runAsUser: 0  # Ensures the pod runs as a non-root user
+        fsGroup: 0    # Ensures the volume is mounted with appropriate group permissions
+      containers:
+        - name: nessus
+          image: tenable/nessus:latest-ubuntu  # Replace with the correct Nessus image reference
+          ports:
+            - containerPort: 8834  # Nessus web interface port
+          volumeMounts:
+            - mountPath: /opt/nessus/var  # Path for Nessus persistent data
+              name: nessus-data-volume
+      volumes:
+        - name: nessus-data-volume
+          persistentVolumeClaim:
+            claimName: nessus-data
+
