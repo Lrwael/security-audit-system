@@ -14,19 +14,6 @@ spec:
       labels:
         app: nessus
     spec:
-      initContainers:
-      - name: prepare-nfs
-        image: busybox
-        command:
-          - sh
-          - -c
-          - |
-            mkdir -p /opt/nessus/var/nessus/CA
-            chown -R 1000:1000 /opt/nessus/var
-            chmod -R 750 /opt/nessus/var
-        volumeMounts:
-        - name: nessus-data-volume
-          mountPath: /opt/nessus/var
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -49,11 +36,8 @@ spec:
           image: tenable/nessus:latest-ubuntu  # Replace with the correct Nessus image reference
           ports:
             - containerPort: 8834  # Nessus web interface port
-          volumeMounts:
-            - mountPath: /opt/nessus/var  # Path for Nessus persistent data
-              name: nessus-data-volume
-      volumes:
-        - name: nessus-data-volume
-          persistentVolumeClaim:
-            claimName: nessus-data
+          securityContext:
+            capabilities:
+              add:
+                - NET_RAW
 
