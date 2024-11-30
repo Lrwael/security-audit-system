@@ -1,0 +1,3 @@
+Plugin ID,CVE,CVSS v2.0 Base Score,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output
+"10205","CVE-1999-0651","7.5","High","192.168.59.217","tcp","513","rlogin Service Detection","The rlogin service is running on the remote host.","The rlogin service is running on the remote host. This service is
+vulnerable since data is passed between the rlogin client and server

@@ -1,20 +1,200 @@
 Plugin ID,CVE,CVSS v2.0 Base Score,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output
-"10180","","","None","192.168.206.0","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"10205","CVE-1999-0651","7.5","High","192.168.59.217","tcp","513","rlogin Service Detection","The rlogin service is running on the remote host.","The rlogin service is running on the remote host. This service is
+vulnerable since data is passed between the rlogin client and server
+in cleartext. A man-in-the-middle attacker can exploit this to sniff
+logins and passwords. Also, it may allow poorly authenticated logins
+without passwords. If the host is vulnerable to TCP sequence number
+guessing (from any network) or IP spoofing (including ARP hijacking on
+a local network) then it may be possible to bypass authentication.
+Finally, rlogin is an easy way to turn file-write access into full
+logins through the .rhosts or rhosts.equiv files.","Comment out the 'login' line in /etc/inetd.conf and restart the inetd
+process. Alternatively, disable this service and use SSH instead.","",""
+"10245","CVE-1999-0651","7.5","High","192.168.59.217","tcp","514","rsh Service Detection","The rsh service is running on the remote host.","The rsh service is running on the remote host. This service is
+vulnerable since data is passed between the rsh client and server
+in cleartext. A man-in-the-middle attacker can exploit this to sniff
+logins and passwords. Also, it may allow poorly authenticated logins
+without passwords. If the host is vulnerable to TCP sequence number
+guessing (from any network) or IP spoofing (including ARP hijacking on
+a local network) then it may be possible to bypass authentication.
+Finally, rsh is an easy way to turn file-write access into full
+logins through the .rhosts or rhosts.equiv files.","Comment out the 'rsh' line in /etc/inetd.conf and restart the inetd
+process. Alternatively, disable this service and use SSH instead.","",""
+"11219","","","None","192.168.59.217","tcp","21","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 21/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","22","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
 
-  - An ICMP ping.
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 22/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","23","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 23/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","25","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.0","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 25/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","53","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 53/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","80","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 80/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","111","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 111/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","139","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 139/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","445","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 445/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","512","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 512/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","513","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 513/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","514","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 514/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","1099","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 1099/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","1524","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 1524/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","2049","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 2049/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","2121","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 2121/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","3306","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 3306/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","3632","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 3632/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","5432","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 5432/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","5900","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 5900/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","6000","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 6000/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","6667","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 6667/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","8009","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 8009/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","8180","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 8180/tcp was found to be open"
+"11219","","","None","192.168.59.217","tcp","8787","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 8787/tcp was found to be open"
+"19506","","","None","192.168.59.217","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
 scan itself :
 
   - The version of the plugin set.
@@ -33,20 +213,17 @@ scan itself :
 
 Nessus version : 10.8.3
 Nessus build : 20010
-Plugin feed version : 202411241743
+Plugin feed version : 202411300707
 Scanner edition used : Nessus Home
 Scanner OS : LINUX
 Scanner distribution : ubuntu1604-x86-64
 Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
+Scan name : metasploitable
+Scan policy used : Advanced Dynamic Scan
+Scanner IP : 172.18.2.241
+Port scanner(s) : nessus_syn_scanner 
 Port range : default
-Ping RTT : 60739.118 ms
+Ping RTT : 16.351 ms
 Thorough tests : no
 Experimental tests : no
 Scan for Unpatched Vulnerabilities : no
@@ -60,3254 +237,437 @@ Patch management checks : None
 Display superseded patches : yes (supersedence plugin did not launch)
 CGI scanning : disabled
 Web application tests : disabled
-Max hosts : 256
+Max hosts : 30
 Max checks : 5
 Recv timeout : 5
-Backports : None
+Backports : Detected
 Allow post-scan editing : Yes
 Nessus Plugin Signature Checking : Enabled
 Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 140 sec
+Scan Start Date : 2024/11/30 8:05 EST
+Scan duration : 620 sec
 Scan for malware : no
 "
-"10180","","","None","192.168.206.1","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"32314","CVE-2008-0166","10.0","Critical","192.168.59.217","tcp","22","Debian OpenSSH/OpenSSL Package Random Number Generator Weakness","The remote SSH host keys are weak.","The remote SSH host key has been generated on a Debian 
+or Ubuntu system which contains a bug in the random number
+generator of its OpenSSL library.
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+The problem is due to a Debian packager removing nearly all
+sources of entropy in the remote version of OpenSSL.
 
-  - An ICMP ping.
+An attacker can easily obtain the private part of the remote
+key and use this to set up decipher the remote session  or
+set up a man in the middle attack.","Consider all cryptographic material generated on the remote host
+to be guessable. In particuliar, all SSH, SSL and OpenVPN key
+material should be re-generated.","http://www.nessus.org/u?107f9bdc
+http://www.nessus.org/u?f14f4224",""
+"32321","CVE-2008-0166","10.0","Critical","192.168.59.217","tcp","25","Debian OpenSSH/OpenSSL Package Random Number Generator Weakness (SSL check)","The remote SSL certificate uses a weak key.","The remote x509 certificate on the remote SSL server has been generated
+on a Debian or Ubuntu system which contains a bug in the random number
+generator of its OpenSSL library. 
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+The problem is due to a Debian packager removing nearly all sources of
+entropy in the remote version of OpenSSL. 
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.1","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+An attacker can easily obtain the private part of the remote key and use
+this to decipher the remote session or set up a man in the middle
+attack.","Consider all cryptographic material generated on the remote host to be
+guessable.  In particuliar, all SSH, SSL and OpenVPN key material should
+be re-generated.","http://www.nessus.org/u?107f9bdc
+http://www.nessus.org/u?f14f4224",""
+"32321","CVE-2008-0166","10.0","Critical","192.168.59.217","tcp","5432","Debian OpenSSH/OpenSSL Package Random Number Generator Weakness (SSL check)","The remote SSL certificate uses a weak key.","The remote x509 certificate on the remote SSL server has been generated
+on a Debian or Ubuntu system which contains a bug in the random number
+generator of its OpenSSL library. 
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
+The problem is due to a Debian packager removing nearly all sources of
+entropy in the remote version of OpenSSL. 
 
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
+An attacker can easily obtain the private part of the remote key and use
+this to decipher the remote session or set up a man in the middle
+attack.","Consider all cryptographic material generated on the remote host to be
+guessable.  In particuliar, all SSH, SSL and OpenVPN key material should
+be re-generated.","http://www.nessus.org/u?107f9bdc
+http://www.nessus.org/u?f14f4224",""
+"33447","CVE-2008-1447","5.0","Medium","192.168.59.217","udp","53","Multiple Vendor DNS Query ID Field Prediction Cache Poisoning","The remote name resolver (or the server it uses upstream) is affected
+by a DNS cache poisoning vulnerability.","The remote DNS resolver does not use random ports when making queries
+to third-party DNS servers. An unauthenticated, remote attacker can
+exploit this to poison the remote DNS server, allowing the attacker to
+divert legitimate traffic to arbitrary sites.","Contact your DNS server vendor for a patch.","https://www.cnet.com/news/massive-coordinated-dns-patch-released/
+https://www.theregister.co.uk/2008/07/21/dns_flaw_speculation/","
+The remote DNS server uses non-random ports for its
+DNS requests. An attacker may spoof DNS responses.
 
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
+List of used ports :
 
-Port range : default
-Ping RTT : 27850.104 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 162 sec
-Scan for malware : no
++ DNS Server: 154.108.7.237
+|- Port: 6287
+|- Port: 6287
+|- Port: 6287
+|- Port: 6287
 "
-"10180","","","None","192.168.206.2","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"46882","CVE-2010-2075","10.0","Critical","192.168.59.217","tcp","6667","UnrealIRCd Backdoor Detection","The remote IRC server contains a backdoor.","The remote IRC server is a version of UnrealIRCd with a backdoor
+that allows an attacker to execute arbitrary code on the affected
+host.","Re-download the software, verify it using the published MD5 / SHA1
+checksums, and re-install it.","https://seclists.org/fulldisclosure/2010/Jun/277
+https://seclists.org/fulldisclosure/2010/Jun/284
+http://www.unrealircd.com/txt/unrealsecadvisory.20100612.txt","
+The remote IRC server is running as :
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 135 with a RST,ACK packet"
-"19506","","","None","192.168.206.2","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 40035.050 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 177 sec
-Scan for malware : no
+uid=0(root) gid=0(root)
 "
-"10180","","","None","192.168.206.3","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-0411","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 135 with a RST,ACK packet"
-"19506","","","None","192.168.206.3","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 38090.814 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 164 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.4","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-1430","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.4","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 45125.219 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:17 EST
-Scan duration : 166 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.6","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-1431","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.6","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 40341.948 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 179 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.8","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-1432","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.8","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 32349.253 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 161 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.11","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-1506","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.11","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 28754.970 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:16 EST
-Scan duration : 199 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.12","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"52611","CVE-2011-2165","4.0","Medium","192.168.59.217","tcp","25","SMTP Service STARTTLS Plaintext Command Injection","The remote mail service allows plaintext command injection while 
+negotiating an encrypted communications channel.","The remote SMTP service contains a software flaw in its STARTTLS
+implementation that could allow a remote, unauthenticated attacker to
+inject commands during the plaintext protocol phase that will be
+executed during the ciphertext protocol phase. 
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Successful exploitation could allow an attacker to steal a victim's
+email or associated SASL (Simple Authentication and Security Layer)
+credentials.","Contact the vendor to see if an update is available.","https://tools.ietf.org/html/rfc2487
+https://www.securityfocus.com/archive/1/516901/30/0/threaded","
+Nessus sent the following two commands in a single packet :
 
-  - An ICMP ping.
+  STARTTLS\r\nRSET\r\n
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+And the server sent the following two responses :
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.12","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 33622.020 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 176 sec
-Scan for malware : no
+  220 2.0.0 Ready to start TLS
+  250 2.0.0 Ok
 "
-"10180","","","None","192.168.206.14","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"57608","","5.0","Medium","192.168.59.217","tcp","445","SMB Signing not required","Signing is not required on the remote SMB server.","Signing is not required on the remote SMB server. An unauthenticated,
+remote attacker can exploit this to conduct man-in-the-middle attacks
+against the SMB server.","Enforce message signing in the host's configuration. On Windows, this
+is found in the policy setting 'Microsoft network server: Digitally
+sign communications (always)'. On Samba, the setting is called 'server
+signing'. See the 'see also' links for further details.","http://www.nessus.org/u?df39b8b3
+http://technet.microsoft.com/en-us/library/cc731957.aspx
+http://www.nessus.org/u?74b80723
+https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html
+http://www.nessus.org/u?a3cac4ea",""
+"66334","","","None","192.168.59.217","tcp","0","Patch Report","The remote host is missing several patches.","The remote host is missing one or more security patches. This plugin lists the newest version of each patch to install 
+to make sure the remote host is up-to-date.
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+Note: Because the 'Show missing patches that have been superseded' setting in your scan policy depends on this plugin,
+it will always run and cannot be disabled.","Install the patches listed below.","","
 
-  - An ICMP ping.
+. You need to take the following 3 actions :
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.14","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+[ ISC BIND Denial of Service (136808) ]
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
++ Action to take : Upgrade to the patched release most closely related to your current version of BIND.
 
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
 
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
+[ ISC BIND Service Downgrade / Reflected DoS (136769) ]
 
-Port range : default
-Ping RTT : 38140.499 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:18 EST
-Scan duration : 181 sec
-Scan for malware : no
++ Action to take : Upgrade to the ISC BIND version referenced in the vendor advisory.
+
+
+[ UnrealIRCd Backdoor Detection (46882) ]
+
++ Action to take : Re-download the software, verify it using the published MD5 / SHA1 checksums, and re-install it.
+
+
 "
-"10180","","","None","192.168.206.18","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"78479","CVE-2014-3566","4.3","Low","192.168.59.217","tcp","25","SSLv3 Padding Oracle On Downgraded Legacy Encryption Vulnerability (POODLE)","It is possible to obtain sensitive information from the remote host
+with SSL/TLS-enabled services.","The remote host is affected by a man-in-the-middle (MitM) information
+disclosure vulnerability known as POODLE. The vulnerability is due to
+the way SSL 3.0 handles padding bytes when decrypting messages
+encrypted using block ciphers in cipher block chaining (CBC) mode.
+MitM attackers can decrypt a selected byte of a cipher text in as few
+as 256 tries if they are able to force a victim application to
+repeatedly send the same data over newly created SSL 3.0 connections.
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+As long as a client and service both support SSLv3, a connection can
+be 'rolled back' to SSLv3, even if TLSv1 or newer is supported by the
+client and service.
 
-  - An ICMP ping.
+The TLS Fallback SCSV mechanism prevents 'version rollback' attacks
+without impacting legacy clients; however, it can only protect
+connections when the client and service support the mechanism. Sites
+that cannot disable SSLv3 immediately should enable this mechanism.
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+This is a vulnerability in the SSLv3 specification, not in any
+particular SSL implementation. Disabling SSLv3 is the only way to
+completely mitigate the vulnerability.","Disable SSLv3.
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.18","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+Services that must support SSLv3 should enable the TLS Fallback SCSV
+mechanism until SSLv3 can be disabled.","https://www.imperialviolet.org/2014/10/14/poodle.html
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00","
+Nessus determined that the remote server supports SSLv3 with at least one CBC 
+cipher suite, indicating that this server is vulnerable.
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 36002.548 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 164 sec
-Scan for malware : no
+It appears that TLSv1 or newer is supported on the server. However, the 
+Fallback SCSV mechanism is not supported, allowing connections to be ""rolled 
+back"" to SSLv3.
 "
-"10180","","","None","192.168.206.58","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"78479","CVE-2014-3566","4.3","Low","192.168.59.217","tcp","5432","SSLv3 Padding Oracle On Downgraded Legacy Encryption Vulnerability (POODLE)","It is possible to obtain sensitive information from the remote host
+with SSL/TLS-enabled services.","The remote host is affected by a man-in-the-middle (MitM) information
+disclosure vulnerability known as POODLE. The vulnerability is due to
+the way SSL 3.0 handles padding bytes when decrypting messages
+encrypted using block ciphers in cipher block chaining (CBC) mode.
+MitM attackers can decrypt a selected byte of a cipher text in as few
+as 256 tries if they are able to force a victim application to
+repeatedly send the same data over newly created SSL 3.0 connections.
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+As long as a client and service both support SSLv3, a connection can
+be 'rolled back' to SSLv3, even if TLSv1 or newer is supported by the
+client and service.
 
-  - An ICMP ping.
+The TLS Fallback SCSV mechanism prevents 'version rollback' attacks
+without impacting legacy clients; however, it can only protect
+connections when the client and service support the mechanism. Sites
+that cannot disable SSLv3 immediately should enable this mechanism.
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
+This is a vulnerability in the SSLv3 specification, not in any
+particular SSL implementation. Disabling SSLv3 is the only way to
+completely mitigate the vulnerability.","Disable SSLv3.
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 1028 with a RST,ACK packet"
-"19506","","","None","192.168.206.58","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+Services that must support SSLv3 should enable the TLS Fallback SCSV
+mechanism until SSLv3 can be disabled.","https://www.imperialviolet.org/2014/10/14/poodle.html
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00","
+Nessus determined that the remote server supports SSLv3 with at least one CBC 
+cipher suite, indicating that this server is vulnerable.
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 47217.551 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 107 sec
-Scan for malware : no
+It appears that TLSv1 or newer is supported on the server. However, the 
+Fallback SCSV mechanism is not supported, allowing connections to be ""rolled 
+back"" to SSLv3.
 "
-"10180","","","None","192.168.206.59","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"134862","CVE-2020-1745","7.5","Critical","192.168.59.217","tcp","8009","Apache Tomcat AJP Connector Request Injection (Ghostcat)","There is a vulnerable AJP connector listening on the remote host.","A file read/inclusion vulnerability was found in AJP connector. A
+ remote, unauthenticated attacker could exploit this vulnerability to 
+read web application files from a vulnerable server. In instances where
+the vulnerable server allows file uploads, an attacker could upload 
+malicious JavaServer Pages (JSP) code within a variety of file types 
+and gain remote code execution (RCE).","Update the AJP configuration to require authorization and/or upgrade the Tomcat server to 7.0.100, 8.5.51, 9.0.31 or later.","http://www.nessus.org/u?8ebe6246
+http://www.nessus.org/u?4e287adb
+http://www.nessus.org/u?cbc3d54e
+https://access.redhat.com/security/cve/CVE-2020-1745
+https://access.redhat.com/solutions/4851251
+http://www.nessus.org/u?dd218234
+http://www.nessus.org/u?dd772531
+http://www.nessus.org/u?2a01d6bf
+http://www.nessus.org/u?3b5af27e
+http://www.nessus.org/u?9dab109f
+http://www.nessus.org/u?5eafcf70","
+Nessus was able to exploit the issue using the following request :
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+0x0000:  02 02 00 08 48 54 54 50 2F 31 2E 31 00 00 0F 2F    ....HTTP/1.1.../
+0x0010:  61 73 64 66 2F 78 78 78 78 78 2E 6A 73 70 00 00    asdf/xxxxx.jsp..
+0x0020:  09 6C 6F 63 61 6C 68 6F 73 74 00 FF FF 00 09 6C    .localhost.....l
+0x0030:  6F 63 61 6C 68 6F 73 74 00 00 50 00 00 09 A0 06    ocalhost..P.....
+0x0040:  00 0A 6B 65 65 70 2D 61 6C 69 76 65 00 00 0F 41    ..keep-alive...A
+0x0050:  63 63 65 70 74 2D 4C 61 6E 67 75 61 67 65 00 00    ccept-Language..
+0x0060:  0E 65 6E 2D 55 53 2C 65 6E 3B 71 3D 30 2E 35 00    .en-US,en;q=0.5.
+0x0070:  A0 08 00 01 30 00 00 0F 41 63 63 65 70 74 2D 45    ....0...Accept-E
+0x0080:  6E 63 6F 64 69 6E 67 00 00 13 67 7A 69 70 2C 20    ncoding...gzip, 
+0x0090:  64 65 66 6C 61 74 65 2C 20 73 64 63 68 00 00 0D    deflate, sdch...
+0x00A0:  43 61 63 68 65 2D 43 6F 6E 74 72 6F 6C 00 00 09    Cache-Control...
+0x00B0:  6D 61 78 2D 61 67 65 3D 30 00 A0 0E 00 07 4D 6F    max-age=0.....Mo
+0x00C0:  7A 69 6C 6C 61 00 00 19 55 70 67 72 61 64 65 2D    zilla...Upgrade-
+0x00D0:  49 6E 73 65 63 75 72 65 2D 52 65 71 75 65 73 74    Insecure-Request
+0x00E0:  73 00 00 01 31 00 A0 01 00 09 74 65 78 74 2F 68    s...1.....text/h
+0x00F0:  74 6D 6C 00 A0 0B 00 09 6C 6F 63 61 6C 68 6F 73    tml.....localhos
+0x0100:  74 00 0A 00 21 6A 61 76 61 78 2E 73 65 72 76 6C    t...!javax.servl
+0x0110:  65 74 2E 69 6E 63 6C 75 64 65 2E 72 65 71 75 65    et.include.reque
+0x0120:  73 74 5F 75 72 69 00 00 01 31 00 0A 00 1F 6A 61    st_uri...1....ja
+0x0130:  76 61 78 2E 73 65 72 76 6C 65 74 2E 69 6E 63 6C    vax.servlet.incl
+0x0140:  75 64 65 2E 70 61 74 68 5F 69 6E 66 6F 00 00 10    ude.path_info...
+0x0150:  2F 57 45 42 2D 49 4E 46 2F 77 65 62 2E 78 6D 6C    /WEB-INF/web.xml
+0x0160:  00 0A 00 22 6A 61 76 61 78 2E 73 65 72 76 6C 65    ...""javax.servle
+0x0170:  74 2E 69 6E 63 6C 75 64 65 2E 73 65 72 76 6C 65    t.include.servle
+0x0180:  74 5F 70 61 74 68 00 00 00 00 FF                   t_path.....     
 
-  - An ICMP ping.
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 135 with a RST,ACK packet"
-"19506","","","None","192.168.206.59","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+This produced the following truncated output (limited to 10 lines) :
+------------------------------ snip ------------------------------
+...<?xml version=""1.0"" encoding=""ISO-8859-1""?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the ""License""); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
+http://www.apache.org/licenses/LICENSE-2.0
+[...]
 
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 45803.539 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 102 sec
-Scan for malware : no
+------------------------------ snip ------------------------------
 "
-"10180","","","None","192.168.206.64","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"134862","CVE-2020-1938","7.5","Critical","192.168.59.217","tcp","8009","Apache Tomcat AJP Connector Request Injection (Ghostcat)","There is a vulnerable AJP connector listening on the remote host.","A file read/inclusion vulnerability was found in AJP connector. A
+ remote, unauthenticated attacker could exploit this vulnerability to 
+read web application files from a vulnerable server. In instances where
+the vulnerable server allows file uploads, an attacker could upload 
+malicious JavaServer Pages (JSP) code within a variety of file types 
+and gain remote code execution (RCE).","Update the AJP configuration to require authorization and/or upgrade the Tomcat server to 7.0.100, 8.5.51, 9.0.31 or later.","http://www.nessus.org/u?8ebe6246
+http://www.nessus.org/u?4e287adb
+http://www.nessus.org/u?cbc3d54e
+https://access.redhat.com/security/cve/CVE-2020-1745
+https://access.redhat.com/solutions/4851251
+http://www.nessus.org/u?dd218234
+http://www.nessus.org/u?dd772531
+http://www.nessus.org/u?2a01d6bf
+http://www.nessus.org/u?3b5af27e
+http://www.nessus.org/u?9dab109f
+http://www.nessus.org/u?5eafcf70","
+Nessus was able to exploit the issue using the following request :
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
+0x0000:  02 02 00 08 48 54 54 50 2F 31 2E 31 00 00 0F 2F    ....HTTP/1.1.../
+0x0010:  61 73 64 66 2F 78 78 78 78 78 2E 6A 73 70 00 00    asdf/xxxxx.jsp..
+0x0020:  09 6C 6F 63 61 6C 68 6F 73 74 00 FF FF 00 09 6C    .localhost.....l
+0x0030:  6F 63 61 6C 68 6F 73 74 00 00 50 00 00 09 A0 06    ocalhost..P.....
+0x0040:  00 0A 6B 65 65 70 2D 61 6C 69 76 65 00 00 0F 41    ..keep-alive...A
+0x0050:  63 63 65 70 74 2D 4C 61 6E 67 75 61 67 65 00 00    ccept-Language..
+0x0060:  0E 65 6E 2D 55 53 2C 65 6E 3B 71 3D 30 2E 35 00    .en-US,en;q=0.5.
+0x0070:  A0 08 00 01 30 00 00 0F 41 63 63 65 70 74 2D 45    ....0...Accept-E
+0x0080:  6E 63 6F 64 69 6E 67 00 00 13 67 7A 69 70 2C 20    ncoding...gzip, 
+0x0090:  64 65 66 6C 61 74 65 2C 20 73 64 63 68 00 00 0D    deflate, sdch...
+0x00A0:  43 61 63 68 65 2D 43 6F 6E 74 72 6F 6C 00 00 09    Cache-Control...
+0x00B0:  6D 61 78 2D 61 67 65 3D 30 00 A0 0E 00 07 4D 6F    max-age=0.....Mo
+0x00C0:  7A 69 6C 6C 61 00 00 19 55 70 67 72 61 64 65 2D    zilla...Upgrade-
+0x00D0:  49 6E 73 65 63 75 72 65 2D 52 65 71 75 65 73 74    Insecure-Request
+0x00E0:  73 00 00 01 31 00 A0 01 00 09 74 65 78 74 2F 68    s...1.....text/h
+0x00F0:  74 6D 6C 00 A0 0B 00 09 6C 6F 63 61 6C 68 6F 73    tml.....localhos
+0x0100:  74 00 0A 00 21 6A 61 76 61 78 2E 73 65 72 76 6C    t...!javax.servl
+0x0110:  65 74 2E 69 6E 63 6C 75 64 65 2E 72 65 71 75 65    et.include.reque
+0x0120:  73 74 5F 75 72 69 00 00 01 31 00 0A 00 1F 6A 61    st_uri...1....ja
+0x0130:  76 61 78 2E 73 65 72 76 6C 65 74 2E 69 6E 63 6C    vax.servlet.incl
+0x0140:  75 64 65 2E 70 61 74 68 5F 69 6E 66 6F 00 00 10    ude.path_info...
+0x0150:  2F 57 45 42 2D 49 4E 46 2F 77 65 62 2E 78 6D 6C    /WEB-INF/web.xml
+0x0160:  00 0A 00 22 6A 61 76 61 78 2E 73 65 72 76 6C 65    ...""javax.servle
+0x0170:  74 2E 69 6E 63 6C 75 64 65 2E 73 65 72 76 6C 65    t.include.servle
+0x0180:  74 5F 70 61 74 68 00 00 00 00 FF                   t_path.....     
 
-  - An ICMP ping.
 
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
 
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 22 with a RST,ACK packet"
-"19506","","","None","192.168.206.64","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
+This produced the following truncated output (limited to 10 lines) :
+------------------------------ snip ------------------------------
+...<?xml version=""1.0"" encoding=""ISO-8859-1""?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the ""License""); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
 
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
+http://www.apache.org/licenses/LICENSE-2.0
+[...]
 
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 43936.233 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 104 sec
-Scan for malware : no
+------------------------------ snip ------------------------------
 "
-"10180","","","None","192.168.206.76","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
+"136769","CVE-2020-8616","5.0","High","192.168.59.217","udp","53","ISC BIND Service Downgrade / Reflected DoS","The remote name server is affected by Service Downgrade / Reflected DoS vulnerabilities.","According to its self-reported version, the instance of ISC BIND 9 running on the remote name server is affected by
+performance downgrade and Reflected DoS vulnerabilities. This is due to BIND DNS not sufficiently limiting the number
+fetches which may be performed while processing a referral response.
 
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 80 with a RST,ACK packet"
-"19506","","","None","192.168.206.76","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 43640.214 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 108 sec
-Scan for malware : no
+An unauthenticated, remote attacker can exploit this to cause degrade the service of the recursive server or to use
+the affected server as a reflector in a reflection attack.","Upgrade to the ISC BIND version referenced in the vendor advisory.","https://kb.isc.org/docs/cve-2020-8616","
+  Installed version : 9.4.2
+  Fixed version     : 9.11.19
 "
-"10180","","","None","192.168.206.77","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.77","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 43748.279 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 107 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.106","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a SYN,ACK packet"
-"19506","","","None","192.168.206.106","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 44208.970 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 92 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.140","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 1028 with a RST,ACK packet"
-"19506","","","None","192.168.206.140","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 43492.155 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 107 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.168","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 111 with a RST,ACK packet"
-"19506","","","None","192.168.206.168","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 46327.762 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:22 EST
-Scan duration : 115 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.199","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.199","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 29925.736 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 156 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.201","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.201","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 105064.698 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:21 EST
-Scan duration : 112 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.213","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.213","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 67257.817 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 131 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.215","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.215","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 34099.990 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 140 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.222","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.222","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 87030.614 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 125 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.225","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.225","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 26922.400 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 152 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.226","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.226","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 36520.986 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 157 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.229","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.229","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 37409.781 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 151 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.230","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 135 with a RST,ACK packet"
-"19506","","","None","192.168.206.230","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 69919.904 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 142 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.231","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.231","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 54873.869 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 154 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.232","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.232","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 25273.778 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 158 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.233","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.233","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 29937.936 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 159 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.234","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.234","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 25375.111 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 154 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.235","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.235","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 57395.782 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 142 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.236","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.236","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 33081.428 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 172 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.237","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.237","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 28526.767 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 170 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.238","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.238","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 33759.979 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 149 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.240","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.240","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 27885.632 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 158 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.241","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 135 with a RST,ACK packet"
-"19506","","","None","192.168.206.241","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 57043.847 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 139 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.245","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.245","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 37865.038 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 162 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.247","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.247","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 23362.368 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 175 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.248","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.248","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 81660.374 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:20 EST
-Scan duration : 129 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.250","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.250","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 34997.136 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 156 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.252","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 445 with a RST,ACK packet"
-"19506","","","None","192.168.206.252","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 39557.647 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 154 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.253","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.253","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 23060.619 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 161 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.254","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.254","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 37410.754 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 172 sec
-Scan for malware : no
-"
-"10180","","","None","192.168.206.255","tcp","0","Ping the remote host","It was possible to identify the status of the remote host (alive or
-dead).","Nessus was able to determine if the remote host is alive using one or
-more of the following ping types :
-
-  - An ARP ping, provided the host is on the local subnet
-    and Nessus is running over Ethernet.
-
-  - An ICMP ping.
-
-  - A TCP ping, in which the plugin sends to the remote host
-    a packet with the flag SYN, and the host will reply with
-    a RST or a SYN/ACK.
-
-  - A UDP ping (e.g., DNS, RPC, and NTP).","n/a","","The remote host is up
-The remote host replied to a TCP SYN packet sent to port 139 with a RST,ACK packet"
-"19506","","","None","192.168.206.255","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
-scan itself :
-
-  - The version of the plugin set.
-  - The type of scanner (Nessus or Nessus Home).
-  - The version of the Nessus Engine.
-  - The port scanner(s) used.
-  - The port range scanned.
-  - The ping round trip time 
-  - Whether credentialed or third-party patch management
-    checks are possible.
-  - Whether the display of superseded patches is enabled
-  - The date of the scan.
-  - The duration of the scan.
-  - The number of hosts scanned in parallel.
-  - The number of checks done in parallel.","n/a","","Information about this scan : 
-
-Nessus version : 10.8.3
-Nessus build : 20010
-Plugin feed version : 202411241743
-Scanner edition used : Nessus Home
-Scanner OS : LINUX
-Scanner distribution : ubuntu1604-x86-64
-Scan type : Normal
-Scan name : live hosts
-Scan policy used : Host Discovery
-Scanner IP : 172.18.2.240
-
-WARNING : No port scanner was enabled during the scan. This may
-lead to incomplete results.
-
-Port range : default
-Ping RTT : 22048.900 ms
-Thorough tests : no
-Experimental tests : no
-Scan for Unpatched Vulnerabilities : no
-Plugin debugging enabled : no
-Paranoia level : 1
-Report verbosity : 1
-Safe checks : yes
-Optimize the test : no
-Credentialed checks : no
-Patch management checks : None
-Display superseded patches : yes (supersedence plugin did not launch)
-CGI scanning : disabled
-Web application tests : disabled
-Max hosts : 256
-Max checks : 5
-Recv timeout : 5
-Backports : None
-Allow post-scan editing : Yes
-Nessus Plugin Signature Checking : Enabled
-Audit File Signature Checking : Disabled
-Scan Start Date : 2024/11/25 5:19 EST
-Scan duration : 156 sec
-Scan for malware : no
+"136808","CVE-2020-8617","4.3","Medium","192.168.59.217","udp","53","ISC BIND Denial of Service","The remote name server is affected by an assertion failure vulnerability.","A denial of service (DoS) vulnerability exists in ISC BIND versions 9.11.18 / 9.11.18-S1 / 9.12.4-P2 / 9.13 / 9.14.11
+/ 9.15 / 9.16.2 / 9.17 / 9.17.1 and earlier. An unauthenticated, remote attacker can exploit this issue, via a
+specially-crafted message, to cause the service to stop responding.
+
+Note that Nessus has not tested for this issue but has instead relied only on the application's self-reported version
+number.","Upgrade to the patched release most closely related to your current version of BIND.","https://kb.isc.org/docs/cve-2020-8617","
+  Installed version : 9.4.2
+  Fixed version     : 9.11.19
 "

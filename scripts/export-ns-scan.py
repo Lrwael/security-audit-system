@@ -6,8 +6,8 @@ import time
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 NESSUS_API = "https://192.168.59.184:32002"
-ACCESS_KEY = "bbc8c1f4e31c5392035fbad134fdc9416b823d3f2708d16c0a1d4b2dfc86522c"  # Replace with your access key
-SECRET_KEY = "bbfc3915d4817e8275ef0e13f6e55312b34c18f2cf95d5b786cad393665b6831"  # Replace with your secret key
+ACCESS_KEY = "cae4db0b54bb52088a5e61a1abc0994ff9858efe87ded9fb877fa11e30370d05"
+SECRET_KEY = "85e3b6bc5dd155e962d2e7c462d54720b377f59ae75e211d318bd2675028bbcc"
 
 headers = {"X-ApiKeys": f"accessKey={ACCESS_KEY}; secretKey={SECRET_KEY}"}
 
