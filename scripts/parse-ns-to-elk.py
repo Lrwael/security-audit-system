@@ -4,7 +4,7 @@ from elasticsearch import Elasticsearch
 # Initialize Elasticsearch client with authentication
 es = Elasticsearch(
     ["https://192.168.59.184:30547"],
-    basic_auth=("elastic", "NmlIjh3GXL4v3rsH"),  # Replace with your credentials
+    basic_auth=("elastic", "nS28MLALgOph3xQg"),  # Replace with your credentials
     verify_certs=False
 )
 

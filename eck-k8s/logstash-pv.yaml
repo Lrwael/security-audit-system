@@ -1,0 +1,13 @@
+# A general purpose PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: logstash-pv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /mnt/logstash/

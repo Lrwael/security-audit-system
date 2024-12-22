@@ -3,7 +3,7 @@ import requests
 import re
 import json
 # Server URL
-OLLAMA_SERVER_URL = "http://192.168.102.42:8889/api/generate"
+OLLAMA_SERVER_URL = "http://192.168.47.42:8889/api/generate"
 
 def clean_prompt(prompt):
     cleaned_prompt = re.sub(r'[^\x20-\x7E]', '', prompt)  # Remove non-ASCII characters
